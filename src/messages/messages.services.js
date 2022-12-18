@@ -45,7 +45,7 @@ const getMessageById = (req, res) => {
 const deleteMessage = (req, res) => {
   const id = req.params.message_id
   const myUser = req.user.id
-  messageControllers.removeMessage({ id, myUser })
+  messageControllers.removeMessage({ id, myUser }) //? Parametros necesarios para validar que somos los usuarios de el message a eliminar.
     .then(data => {
       if (data) {
         res.status(204).json()

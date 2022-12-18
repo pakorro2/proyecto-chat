@@ -2,7 +2,7 @@ const router = require('express').Router();
 const conversationServices = require('./conversations.services')
 const passportJWT = require('../middlewares/auth.middleware')
 const messageServevices = require('../messages/messages.services')
-const participantValidate = require('../middlewares/participantValidate.middleware')
+const participantValidate = require('../middlewares/participantValidate.middleware') //? Con este middleware validaremos que seas participante de la conversacion
 
 
 router.route('/')

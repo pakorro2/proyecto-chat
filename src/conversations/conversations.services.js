@@ -15,6 +15,7 @@ const postConversations = (req, res) => {
   const ownerId = req.user.id
   conversationControllers.createConversation({ title, imageUrl, participantId, ownerId })
     .then(data => {
+      //? Validacion para que no puedas crear una conversacion contigo mismo
       if (participantId !== ownerId) {
         res.status(201).json(data)
       } else {
